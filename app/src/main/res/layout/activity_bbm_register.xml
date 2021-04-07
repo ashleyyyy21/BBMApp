@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/dw"
+    tools:context=".bbmRegister">
+
+ <TextView
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginLeft="80dp"
+android:text="Register"
+android:textSize="50dp"/>
+
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginTop="100dp"
+android:foregroundGravity="center"
+android:gravity="center"
+android:orientation="vertical">
+
+<EditText
+    android:id="@+id/name"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:hint="Name"
+    android:inputType="textPersonName"
+    android:text="Name">
+
+</EditText>
+
+<EditText
+    android:id="@+id/email"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:hint="Email"
+    android:inputType="textEmailAddress|textEmailSubject"
+    android:text="Email"></EditText>
+
+<EditText
+    android:id="@+id/phoneNumber"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:hint="Phone Number"
+    android:inputType="textPhonetic|phone"
+    android:text="Phone Number"></EditText>
+
+<EditText
+    android:id="@+id/mailingAddress"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:hint="Mailing Address"
+    android:inputType="textPostalAddress"
+    android:text="Mailing Adress"></EditText>
+<EditText
+    android:id="@+id/username"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:hint="Username"
+    android:inputType="textCapCharacters|text|textEmailSubject"
+    android:text="Username"></EditText>
+<EditText
+    android:id="@+id/password"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:hint="Password"
+    android:inputType="textPassword|textEmailSubject"
+    android:text="Password"></EditText>
+<EditText
+    android:id="@+id/reenterpassword"
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:hint="Re-enter Password"
+    android:inputType="textPassword|textEmailSubject"
+    android:text="Re-enter Password"></EditText>
+
+
+
+
+<TextView
+    android:layout_width="250dp"
+    android:layout_height="60dp"
+    android:text="Have an Account?"></TextView>
+
+
+</LinearLayout>
+
+<TextView
+android:id="@+id/btn"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:layout_marginLeft="130dp"
+android:layout_marginTop="520dp"
+android:gravity="center"
+android:text="login"></TextView>
+
+<Button
+android:id="@+id/button"
+android:layout_width="200dp"
+android:layout_height="wrap_content"
+android:layout_marginLeft="100dp"
+android:layout_marginTop="550dp"
+android:gravity="center"
+android:text="Register">
+
+</Button>
+
+    </RelativeLayout>
