@@ -82,7 +82,7 @@ public class bbmRegister extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(bbmRegister.this, bbmAccountActivity.class);
+                Intent intent = new Intent(bbmRegister.this, post.class);
                 startActivity(intent);
             }
         });

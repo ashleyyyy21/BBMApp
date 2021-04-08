@@ -74,7 +74,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             private void goMainActivity() {
-                Intent i = new Intent(MainActivity.this, bbmAccountActivity.class);
+                Intent i = new Intent(MainActivity.this, post.class);
                 startActivity(i);
                 finish();
 
