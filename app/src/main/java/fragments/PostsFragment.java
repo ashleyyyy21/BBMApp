@@ -7,11 +7,18 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.bbmapp.Post1;
 import com.bbmapp.R;
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +27,7 @@ import com.bbmapp.R;
  */
 public class PostsFragment extends Fragment {
 
+    public static final String TAG = "PostsFragment";
     private RecyclerView rvPosts;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -72,5 +80,21 @@ public class PostsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         rvPosts = view.findViewById(R.id.rvPosts);
+    }
+    private void queryPosts() {
+        ParseQuery<Post1> query = ParseQuery.getQuery(Post1.class);
+        query.include(Post1.KEY_USER);
+        query.findInBackground(new FindCallback<Post1>() {
+            @Override
+            public void done(List<Post1> posts, ParseException e) {
+                if (e != null) {
+                    Log.e(TAG, "Issue with getting posts", e);
+                    return;
+                }
+                for (Post1 post1 : posts) {
+                    Log.i(TAG, "Post1: " + post1.getBusiness() + ", username: " + post1.getUser());
+                }
+            }
+        });
     }
 }

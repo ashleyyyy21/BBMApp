@@ -179,20 +179,5 @@ public class FavoriteFragment extends Fragment {
         }
 
 
-    private void queryPosts() {
-        ParseQuery<Post1> query = ParseQuery.getQuery(Post1.class);
-        query.include(Post1.KEY_USER);
-        query.findInBackground(new FindCallback<Post1>() {
-            @Override
-            public void done(List<Post1> posts, ParseException e) {
-                if (e != null) {
-                    Log.e(TAG, "Issue with getting posts", e);
-                    return;
-                }
-                for (Post1 post1 : posts) {
-                    Log.i(TAG, "Post1: " + post1.getBusiness() + ", username: " + post1.getUser());
-                }
-            }
-        });
-    }
+
 }
