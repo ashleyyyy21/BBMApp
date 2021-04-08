@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Intent;
 import android.location.Location;
@@ -34,10 +35,13 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
+import fragments.FavoriteFragment;
+import fragments.PostsFragment;
+
 public class post extends AppCompatActivity {
     public static final String TAG = "post";
 
-
+    final FragmentManager fragmentManager = getSupportFragmentManager();
     private BottomNavigationView bottomNavigationView;
 
 
@@ -60,17 +64,22 @@ public class post extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.action_favorites:
                         Toast.makeText(post.this, "Favorites!", Toast.LENGTH_SHORT).show();
+                        fragment = new FavoriteFragment();
                         break;
                     case R.id.action_home:
                         Toast.makeText(post.this, "Home!", Toast.LENGTH_SHORT).show();
+                        fragment = new PostsFragment();
                         break;
                     default:
                     case R.id.action_profile:
                         Toast.makeText(post.this, "Profile!", Toast.LENGTH_SHORT).show();
+                        fragment = new PostsFragment();
                         break;
                 }
+                fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
                 return true;
             }
         });
+        bottomNavigationView.setSelectedItemId(R.id.action_home);
     }
 }
