@@ -62,18 +62,15 @@ public class post extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
                 Fragment fragment;
                 switch (menuItem.getItemId()) {
-                    case R.id.action_favorites:
-                        Toast.makeText(post.this, "Favorites!", Toast.LENGTH_SHORT).show();
-                        fragment = new FavoriteFragment();
-                        break;
                     case R.id.action_home:
-                        Toast.makeText(post.this, "Home!", Toast.LENGTH_SHORT).show();
                         fragment = new PostsFragment();
+                        break;
+                    case R.id.action_favorites:
+                        fragment = new FavoriteFragment();
                         break;
                     default:
                     case R.id.action_profile:
-                        Toast.makeText(post.this, "Profile!", Toast.LENGTH_SHORT).show();
-                        fragment = new PostsFragment();
+                        fragment = new FavoriteFragment();
                         break;
                 }
                 fragmentManager.beginTransaction().replace(R.id.flContainer, fragment).commit();
