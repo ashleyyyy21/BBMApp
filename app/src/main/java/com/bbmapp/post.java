@@ -35,7 +35,7 @@ import org.json.JSONArray;
 import java.io.File;
 import java.util.List;
 
-import fragments.ComposeFragment;
+import fragments.FavoriteFragment;
 import fragments.PostsFragment;
 
 public class post extends AppCompatActivity {
@@ -64,7 +64,7 @@ public class post extends AppCompatActivity {
                 switch (menuItem.getItemId()) {
                     case R.id.action_favorites:
                         Toast.makeText(post.this, "Favorites!", Toast.LENGTH_SHORT).show();
-                        fragment = new ComposeFragment();
+                        fragment = new FavoriteFragment();
                         break;
                     case R.id.action_home:
                         Toast.makeText(post.this, "Home!", Toast.LENGTH_SHORT).show();

@@ -18,6 +18,8 @@ public class Post1 extends ParseObject {
     public static final String KEY_CATEGORY = "Category";
     public static final String KEY_DESCRIPTION = "Description";
     public static final String KEY_USER = "User";
+    public static final String KEY_CREATED_KEY = "createdAt";
+
 
     public String getBusiness() {
         return getString(KEY_BUSINESS);
