@@ -24,23 +24,20 @@ import android.widget.Toast;
 
 import com.bbmapp.Post1;
 import com.bbmapp.R;
-import com.parse.FindCallback;
 import com.parse.ParseException;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 
 import java.io.File;
-import java.util.List;
 
 import static android.app.Activity.RESULT_OK;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link FavoriteFragment#newInstance} factory method to
+ * Use the {@link ComposeFragment #newInstance} factory method to
  * create an instance of this fragment.
  */
-public class FavoriteFragment extends Fragment {
+public class ComposeFragment extends Fragment {
     public static final String TAG = "FavoriteFragment";
     public static final int CAPTURE_IMAGE_ACTIVITY_REQUEST_CODE = 42;
     private ImageView imageView;
@@ -55,7 +52,7 @@ public class FavoriteFragment extends Fragment {
     public String photoFileName = "photo.jpg";
 
 
-    public FavoriteFragment() {
+    public ComposeFragment() {
         // Required empty public constructor
     }
 
@@ -64,7 +61,7 @@ public class FavoriteFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favorite, container, false);
+        return inflater.inflate(R.layout.fragment_compose, container, false);
     }
 
     @Override
